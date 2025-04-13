@@ -1,25 +1,16 @@
 {
   "compilerOptions": {
-    "lib": ["DOM", "ESNext"],
-    "moduleResolution": "node",
-    "jsx": "react-jsx",
-    "target": "ESNext",
-    "noEmit": true,
-    "skipLibCheck": true,
-    "useDefineForClassFields": true,
+    "lib": ["DOM", "ES2021"],
     "importHelpers": true,
-
-    /* modules */
     "module": "ESNext",
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
     "isolatedModules": true,
     "resolveJsonModule": true,
-    "allowImportingTsExtensions": true,
-
-    /* type checking */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "moduleResolution": "bundler",
+    "useDefineForClassFields": true
   },
-  "include": ["src/**/*"],
+  "include": ["src"],
   "exclude": ["node_modules"]
 }

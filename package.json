@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "init": "pnpm run install",
+    "clean": "rm -rf node_modules pnpm-lock.yaml",
+    "init": "pnpm install",
     "dev": "rspress dev",
     "test": "jest",
     "build": "rsbuild build",
@@ -20,7 +21,6 @@
   "devDependencies": {
     "@eslint/compat": "^1.2.7",
     "@eslint/js": "^9.23.0",
-    "@rsbuild/core": "^1.3.1",
     "@rsbuild/plugin-react": "^1.1.1",
     "@testing-library/react": "^16.3.0",
     "@types/jest": "^29.5.14",
@@ -36,6 +36,8 @@
     "rspress": "^1.43.11",
     "ts-jest": "^29.3.2",
     "typescript": "^5.8.2",
-    "typescript-eslint": "^8.29.0"
+    "typescript-eslint": "^8.29.0",
+    "@biomejs/biome": "^1.9.4",
+    "@rslib/core": "^0.6.2"
   }
 }
