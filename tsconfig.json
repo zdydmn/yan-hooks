@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "lib": ["DOM", "ES2021"],
+    "lib": ["DOM", "ESNext"],
     "importHelpers": true,
     "module": "ESNext",
+    "target": "ESNext",
     "jsx": "react-jsx",
     "strict": true,
     "skipLibCheck": true,

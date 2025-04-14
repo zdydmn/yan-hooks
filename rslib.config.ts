@@ -6,6 +6,7 @@ export default defineConfig({
     entry: {
       index: ['./src/**'],
     },
+    exclude: ['**/*.test.js', '**/__tests__/**'],
   },
   lib: [
     {
@@ -16,6 +17,16 @@ export default defineConfig({
   ],
   output: {
     target: 'web',
+  },
+  tools: {
+    rspack: (config, { rspack }) => {
+      config.plugins?.push(
+        new rspack.IgnorePlugin({
+          resourceRegExp: /\.test\.js$/,
+          contextRegExp: /__tests__$/
+        }),
+      );
+    },
   },
   plugins: [pluginReact()],
 });
