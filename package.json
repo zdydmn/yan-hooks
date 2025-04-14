@@ -5,7 +5,7 @@
   "private": false,
   "type": "module",
   "main": "./dist/index.js",
-  "types": "./dest/index.d.ts",
+  "types": "./dest/types/index.d.ts",
   "repository": "https://github.com/zdydmn/yan-hooks",
   "homepage": "https://github.com/zdydmn/yan-hooks",
   "publishConfig": {
