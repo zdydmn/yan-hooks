@@ -1,11 +1,12 @@
 {
   "name": "yan-hooks",
   "description": "yancode React 业务 Hooks",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "private": false,
   "type": "module",
   "main": "./dist/index.js",
-  "types": "./dest/types/index.d.ts",
+  "module": "./dist/index.cjs",
+  "types": "./dist/lib/index.d.ts",
   "repository": "https://github.com/zdydmn/yan-hooks",
   "homepage": "https://github.com/zdydmn/yan-hooks",
   "publishConfig": {
@@ -23,17 +24,20 @@
     "build": "rslib build",
     "format": "prettier --write .",
     "lint": "eslint .",
-    "pub": "pnpm run build && npm publish"
+    "pub": "pnpm run build && npm version patch && npm publish"
   },
   "keywords": [
     "yancode",
     "react",
     "hooks"
   ],
-  "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
-  },
+  "files": [
+    "README.md",
+    "package.json",
+    "dist",
+    "./dist/lib",
+    "./dist/es"
+  ],
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@eslint/compat": "^1.2.7",
@@ -56,5 +60,9 @@
     "tslib": "^2.8.1",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.29.0"
+  },
+  "peerDependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   }
 }

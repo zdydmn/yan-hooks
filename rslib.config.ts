@@ -4,29 +4,36 @@ import { defineConfig } from '@rslib/core';
 export default defineConfig({
   source: {
     entry: {
-      index: ['./src/**'],
+      index: ['./src/index.ts'],
     },
-    exclude: ['**/*.test.js', '**/__tests__/**'],
+    exclude: ['**/__tests__/**'],
   },
   lib: [
     {
-      bundle: false,
-      dts: true,
+      bundle: true,
       format: 'esm',
+      outBase: './dist/es',
+      dts: {
+        distPath: './dist/es',
+        autoExtension: true,
+      },
+    },
+    {
+      bundle: true,
+      format: 'cjs',
+      outBase: './dist/lib',
+      dts: {
+        distPath: './dist/lib',
+        autoExtension: true,
+      },
     },
   ],
   output: {
-    target: 'web',
-  },
-  tools: {
-    rspack: (config, { rspack }) => {
-      config.plugins?.push(
-        new rspack.IgnorePlugin({
-          resourceRegExp: /\.test\.js$/,
-          contextRegExp: /__tests__$/
-        }),
-      );
+    externals: {
+      react: 'react',
+      'react-dom': 'react-dom',
     },
+    target: 'web',
   },
   plugins: [pluginReact()],
 });
